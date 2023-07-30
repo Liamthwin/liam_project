@@ -1,3 +1,4 @@
+import os
 def Q_one():
     ask=input("Are u sure to answer?: ")
     if ask=="yes"or ask=="Yes":
