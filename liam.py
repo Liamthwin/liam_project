@@ -20,6 +20,10 @@ def question4():
     quest3=input("What is 10-8?")
     if quest3=="2":
         question1()
+ def question5():
+     quest4=input("what is 30-10")
+     if quest4=="20":
+         question1()
 Q_one()
 
 
