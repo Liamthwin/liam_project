@@ -1,46 +1,25 @@
-from tkinter import*
-window = Tk()
-window.geometry("500x200")
-def textbox2():
-    textbox2=Message(text=data1.get())
-    textbox2.place(x=155,y=70,width=200,height=25)
-    textbox2["bg"]="white"
-    textbox2["fg"]="black"
+from tkinter import *
+def name():
+ name=name_box.get()
+ name_list.insert(END,name)
+ name_box.focus()
+def clear():
+ name_list.delete(0,END)
+ name_box.focus()
+w=Tk()
 
-def textbox3():
-    textbox3=Message(text=data2.get())
-    textbox3.place(x=155,y=100,width=200,height=25)
-    textbox3["bg"]="white"
-    textbox3["fg"]="black"
-
-data1=StringVar()
+w.configure(background="red")
+w.title("Names List")
+w.geometry("600x400")
 label1=Label(text="Enter Your Name: ")
-label1.place(x=30,y=20)
-textbox1=Entry(textvariable=data1)
-textbox1.place(x=150,y=20,width=200,height=25)
-textbox1["justify"]="center"
-
-data2=StringVar()
-label2=Label(text="Enter Your Age: ")
-label2.place(x=30,y=40)
-textbox5=Entry(textvariable=data2)
-textbox5.place(x=150,y=40,width=200,height=25)
-textbox5["justify"]="center"
-
-
-textbox1.focus()
-button=Button(text="Press Me",command=textbox2)
-button.place(x=30,y=80,width=120,height=25)
-
-textbox5.focus()
-button=Button(text="Press Me",command=textbox3)
-button.place(x=30,y=100,width=120,height=25)
-
-window.mainloop()
-
-
-    
-
-
-
-
+label1.place(x=20,y=30,width=200,height=25)
+name_box=Entry(text=0)
+name_box.place(x=250,y=30,width=200,height=25)
+name_box.focus()
+button1=Button(text="Add to list",command=name)
+button1.place(x=250,y=70,width=200,height=25)
+name_list=Listbox()
+name_list.place(x=20,y=70,width=200,height=100)
+button2=Button(text="Clear List",command=clear)
+button2.place(x=250,y=110,width=200,height=25)
+w.mainloop()
